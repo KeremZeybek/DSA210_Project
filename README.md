@@ -35,8 +35,25 @@ https://www.bsg.ox.ac.uk/research/covid-19-government-response-tracker
 https://github.com/OxCGRT/covid-policy-dataset/tree/main/data
 
 
-## Data Analysis
+## Data Analysis Plan
+### Data Preprocessing and Merging ###
 
+**OxCGRT Data Processing:** The raw OxCGRT dataset is too large for this analysis. Related data files will be selected.
+
+**Column Selection:** Only essential columns will be loaded to save memory.
+
+**Filtering:** The data will be filtered to include only country-level data (not sub-national regions like US states).
+
+**Resampling:** The OxCGRT data is daily. It will be resampled into monthly averages for the StringencyIndex to match the ACLED aggregated data.
+
+**ACLED Data Processing:** The Data on Repression and political violence events datasets will be aggregated to get a monthly total count of events for each country.
+
+**Final Merging:** The processed monthly ACLED data and the processed monthly OxCGRT data will be matched and merged into a single, unified DataFrame.
+
+
+### Stage 1: EDA & Hypothesis Testing (by 28 November) ###
+
+### Stage 2: Machine Learning (by 02 January) ###
 
 
 ## Tools and Technologies 
@@ -51,3 +68,6 @@ https://github.com/OxCGRT/covid-policy-dataset/tree/main/data
 **Definition of "Repression":** The project is dependent on ACLED's specific definition and data collection methodology for "repression events". This may not capture all forms of repression.
 
 **Data bias:** Authoritarian states might underreport repression or censor news, affecting ACLED data quality.
+
+## Future Works
+
