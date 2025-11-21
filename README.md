@@ -40,6 +40,7 @@ https://github.com/OxCGRT/covid-policy-dataset/tree/main/data
 
 ### OxCGRT Data Processing:
 The raw OxCGRT dataset is too large for this analysis. Related data files will be selected.
+Because of the upload limit, zip file is uploaded.
 
 The Oxford COVID-19 Government Response Tracker (OxCGRT) provides data across multiple file formats (e.g., timeseries, raw, compact, fullwithnotes, national-subnational). For this project, we have specifically selected the OxCGRT_compact_national_v1.csv file.
 https://github.com/OxCGRT/covid-policy-dataset/blob/e7f66ee39654293b5c068efd2f195bd591dc27f6/data/OxCGRT_compact_national_v1.csv 
