@@ -38,18 +38,20 @@ https://github.com/OxCGRT/covid-policy-dataset/tree/main/data
 ## Data Analysis Plan
 ### Data Preprocessing and Merging ###
 
-**OxCGRT Data Processing:** The raw OxCGRT dataset is too large for this analysis. Related data files will be selected.
+### OxCGRT Data Processing:
+The raw OxCGRT dataset is too large for this analysis. Related data files will be selected.
 
-**Column Selection:** Only essential columns will be loaded to save memory.
+**Column Selection:** To avoid memory issues, we will strictly load only essential columns. We will identify these columns (specifically `CountryName`, `Date`, and `StringencyIndex`) by consulting the official **OxCGRT Codebook/Documentation**.
 
-**Filtering:** The data will be filtered to include only country-level data (not sub-national regions like US states).
+**Filtering:** The data will be filtered to include only country-level data, excluding sub-national regions (e.g., US states) to match the granularity of the ACLED data.
 
-**Resampling:** The OxCGRT data is daily. It will be resampled into monthly averages for the StringencyIndex to match the ACLED aggregated data.
+**Temporal Downsampling:** The OxCGRT data is *daily*, while the ACLED aggregated data is *monthly*. We will apply **temporal downsampling** by grouping the daily `StringencyIndex` entries by `Country` and `Month` and calculating the **mean (average)** stringency for that month.
 
-**ACLED Data Processing:** The Data on Repression and political violence events datasets will be aggregated to get a monthly total count of events for each country.
+### ACLED Data Processing:
+The ACLED "Data on Repression" file will be aggregated to get a **monthly total count of repression events** for each country.
 
-**Final Merging:** The processed monthly ACLED data and the processed monthly OxCGRT data will be matched and merged into a single, unified DataFrame.
-
+### Final Merging:
+The processed monthly ACLED data and the processed monthly OxCGRT data will be merged into a single, unified `DataFrame` using an inner join on `Country` and `Month`.
 
 ### Stage 1: EDA & Hypothesis Testing (by 28 November) ###
 
