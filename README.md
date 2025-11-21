@@ -41,11 +41,18 @@ https://github.com/OxCGRT/covid-policy-dataset/tree/main/data
 ### OxCGRT Data Processing:
 The raw OxCGRT dataset is too large for this analysis. Related data files will be selected.
 
-**Column Selection:** To avoid memory issues, we will strictly load only essential columns. We will identify these columns (specifically `CountryName`, `Date`, and `StringencyIndex`) by consulting the official **OxCGRT Codebook/Documentation**.
+The Oxford COVID-19 Government Response Tracker (OxCGRT) provides data across multiple file formats (e.g., timeseries, raw, compact, fullwithnotes, national-subnational). For this project, we have specifically selected the OxCGRT_compact_national_v1.csv file.
+https://github.com/OxCGRT/covid-policy-dataset/blob/e7f66ee39654293b5c068efd2f195bd591dc27f6/data/OxCGRT_compact_national_v1.csv 
 
-**Filtering:** The data will be filtered to include only country-level data, excluding sub-national regions (e.g., US states) to match the granularity of the ACLED data.
+**Granularity Match:** Our target variable (ACLED Repression Events) is aggregated at the National level. The _national version of the OxCGRT file comes pre-filtered to exclude sub-national regions (e.g., US states, Canadian provinces), significantly reducing file size and processing overhead compared to the full raw dataset.
 
-**Temporal Downsampling:** The OxCGRT data is *daily*, while the ACLED aggregated data is *monthly*. We will apply **temporal downsampling** by grouping the daily `StringencyIndex` entries by `Country` and `Month` and calculating the **mean (average)** stringency for that month.
+**Feature Availability:** This file includes the calculated StringencyIndex_Average, which is the primary feature required for our hypothesis testing, removing the need to manually calculate indices from raw policy indicators.
+
+**Data Structure:** Unlike the timeseries files which use a wide format (dates as columns), the compact file uses a standard long format (one row per date), which is optimized for time-series resampling in Python/Pandas.
+
+**Column Selection:** To avoid memory issues, we will strictly load only essential columns. We will identify these columns (specifically `CountryName`, `Date`, and `StringencyIndex_Average`) by consulting the official **OxCGRT Codebook/Documentation**.
+
+**Temporal Downsampling:** The OxCGRT data is *daily*, while the ACLED aggregated data is *monthly*. We will apply **temporal downsampling** by grouping the daily `StringencyIndex_Average` entries by `Country` and `Month` and calculating the **mean** stringency for that month.
 
 ### ACLED Data Processing:
 The ACLED "Data on Repression" file will be aggregated to get a **monthly total count of repression events** for each country.
