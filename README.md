@@ -47,7 +47,7 @@ https://github.com/OxCGRT/covid-policy-dataset/blob/e7f66ee39654293b5c068efd2f19
 
 **Granularity Match:** Our target variable (ACLED Repression Events) is aggregated at the National level. The _national version of the OxCGRT file comes pre-filtered to exclude sub-national regions (e.g., US states, Canadian provinces), significantly reducing file size and processing overhead compared to the full raw dataset.
 
-**Feature Availability:** This file includes the calculated StringencyIndex_Average, which is the primary feature required for our hypothesis testing, removing the need to manually calculate indices from raw policy indicators.
+**Feature Availability:** This file includes the calculated `StringencyIndex_Average`, which is the primary feature required for our hypothesis testing, removing the need to manually calculate indices from raw policy indicators.
 
 **Data Structure:** Unlike the timeseries files which use a wide format (dates as columns), the compact file uses a standard long format (one row per date), which is optimized for time-series resampling in Python/Pandas.
 
