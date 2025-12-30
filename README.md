@@ -203,7 +203,8 @@ We trained models to predict next month's repression events using current policy
 | PoliticalViolenceEvents | 4 | 3 | ⚠️ RF captures non-linear patterns |
 | AnnualDemonstrations | 5 | 4 | Minor discrepancy |
 
-![Feature Importance Comparison](figures/feature_importance_comparison.png)
+![Model Comparison](Figures/model_comparison_scatter.png)
+![Feature Importance Comparison](Figures/feature_importance_comparison.png)
 
 **Insight:** Economic Support has a **direct linear effect** (negative coefficient) that Linear Regression captures well. However, in Random Forest's non-linear context, its predictive contribution is lower—suggesting the "Carrot" works through **simple, direct mechanisms** rather than complex interactions.
 
@@ -217,9 +218,8 @@ Using the Elbow Method, we identified **k=3** as the optimal number of clusters,
 | 1 | 84 | 62.5 | 56.6 | 7.1 | **Welfare State** |
 | 2 | 2 (India, Myanmar) | 47.5 | 32.8 | **116.3** | **Authoritarian** |
 
-![Feature Importance](figures/feature_importance.png)
-![State Archetypes (PCA)](figures/state_archetypes.png)
-![Model Comparison](figures/model_comparison_scatter.png)
+![State Archetypes (PCA)](Figures/state_archetypes.png)
+
 
 **Key Insights from Machine Learning:**
 
@@ -238,7 +238,7 @@ Using the Elbow Method, we identified **k=3** as the optimal number of clusters,
 - ✅ **H3 Confirmed:** Economic support has a negative (mitigating) effect (coefficient = -0.010)
 - ✅ **"Immediate Enforcement" validated:** Feature importance shows current-period variables dominate predictions
 
-### 🏁 Final Conclusion & Verdict
+### Final Conclusion & Verdict
 
 Our analysis validates the **"Carrot & Stick" Hypothesis** through multiple lenses:
 
