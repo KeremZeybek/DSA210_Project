@@ -162,7 +162,7 @@ Persistence: The relationship never dropped below zero, proving that restriction
 
 Nuance: While the link is statistically significant, the low-to-moderate magnitude suggests that restrictions were a contributing factor rather than the sole driver of state violence. In active conflict zones, restrictions acted as an additional layer of control on top of existing unrest.
 
-![Rolling Correlation](Figures/visual_rolling_correlation.png)
+![Rolling Correlation](figures/visual_rolling_correlation.png)
 
 **Final Verdict**
 
@@ -203,8 +203,8 @@ We trained models to predict next month's repression events using current policy
 | PoliticalViolenceEvents | 4 | 3 | ⚠️ RF captures non-linear patterns |
 | AnnualDemonstrations | 5 | 4 | Minor discrepancy |
 
-![Model Comparison](Figures/model_comparison_scatter.png)
-![Feature Importance Comparison](Figures/feature_importance_comparison.png)
+![Model Comparison](figures/model_comparison_scatter.png)
+![Feature Importance Comparison](figures/feature_importance_comparison.png)
 
 **Insight:** Economic Support has a **direct linear effect** (negative coefficient) that Linear Regression captures well. However, in Random Forest's non-linear context, its predictive contribution is lower—suggesting the "Carrot" works through **simple, direct mechanisms** rather than complex interactions.
 
@@ -218,7 +218,7 @@ Using the Elbow Method, we identified **k=3** as the optimal number of clusters,
 | 1 | 84 | 62.5 | 56.6 | 7.1 | **Welfare State** |
 | 2 | 2 (India, Myanmar) | 47.5 | 32.8 | **116.3** | **Authoritarian** |
 
-![State Archetypes (PCA)](Figures/state_archetypes.png)
+![State Archetypes (PCA)](figures/state_archetypes.png)
 
 
 **Key Insights from Machine Learning:**
@@ -278,6 +278,8 @@ The stability observed in the "Welfare State" cluster was largely a **luxury of 
 5. **Outlier Sensitivity:** India and Myanmar dominate the "Authoritarian" cluster—results may not generalize to other high-repression contexts.
 
 6. **Omitted Variables:** Media freedom, opposition strength, and regime type are not included in the model.
+
+7. **Cluster Imbalance & Outliers:** We acknowledge that the "Authoritarian" cluster contains only 2 countries (India, Myanmar). This is not a sampling error but an outlier detection finding. It highlights that extreme state violence coupled with moderate policies is a rare, localized phenomenon rather than a global norm.
 
 ## Future Works
 
