@@ -35,7 +35,7 @@ This project is structured in four main phases, following the DSA 210 Term Proje
     - [x] **Unsupervised Learning:** Apply K-Means Clustering to identify state archetypes ("Welfare State" vs. "Conflict Zone").
     - [x] **Validation:** Compare model performance (R^2 scores) to validate the linearity of the relationship.
 
-- [ ] **Phase 4: Final Reporting (Target: Jan 09)**
+- [x] **Phase 4: Final Reporting (Completed: Jan 09)**
 
 ---
 
@@ -273,3 +273,4 @@ The stability observed in the "Welfare State" cluster was largely a **luxury of 
 2.  **Model Strategy:** AI suggested comparing Linear Regression with Random Forest to test the linearity of the relationship.
 3.  **Visualization:** Generated code for "Rolling Correlation" and PCA Scatter Plots.
 4.  **Statistical Interpretation:** AI assisted in interpreting the negative coefficients of Economic Support and the implications of Zero-Inflation in the dataset.
+5.  **Ownership of Ideas:** The conceptual framework, research questions, and hypotheses are entirely my own. AI tools were leveraged exclusively to assist with technical implementation and code generation.
